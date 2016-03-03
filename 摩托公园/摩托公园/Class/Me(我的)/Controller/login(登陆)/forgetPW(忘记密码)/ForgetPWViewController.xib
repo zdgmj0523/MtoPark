@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForgetPWViewController">
+            <connections>
+                <outlet property="iPhoneNum" destination="esH-UI-YXI" id="l1b-FF-yns"/>
+                <outlet property="testingButton" destination="CA7-CR-Pbx" id="aaP-gr-TY9"/>
+                <outlet property="testingNum" destination="3aP-Gd-ESr" id="wNw-xd-jiT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Heg-zm-2KH">
+                    <rect key="frame" x="50" y="132" width="336" height="0.5"/>
+                    <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="BZ3-st-zuZ"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6 位验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-Gd-ESr">
+                    <rect key="frame" x="50" y="154" width="461" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="esH-UI-YXI">
+                    <rect key="frame" x="50" y="81" width="336" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                </textField>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGp-8t-gsM">
+                    <rect key="frame" x="50" y="201" width="461" height="0.5"/>
+                    <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="6mT-g4-anv"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-CR-Pbx">
+                    <rect key="frame" x="443" y="102" width="84" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="KhQ-VP-CSN"/>
+                        <constraint firstAttribute="height" constant="42" id="lgt-MN-fX6"/>
+                    </constraints>
+                    <state key="normal" title="验证">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="testingButtonClick:" destination="-1" eventType="touchUpInside" id="7Xs-Xe-80i"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3aP-Gd-ESr" firstAttribute="leading" secondItem="esH-UI-YXI" secondAttribute="leading" id="2sz-DG-NxI"/>
+                <constraint firstItem="rGp-8t-gsM" firstAttribute="top" secondItem="3aP-Gd-ESr" secondAttribute="bottom" constant="10" id="2zT-qY-GdQ"/>
+                <constraint firstItem="esH-UI-YXI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="76A-iF-f4R"/>
+                <constraint firstItem="CA7-CR-Pbx" firstAttribute="trailing" secondItem="3aP-Gd-ESr" secondAttribute="trailing" id="Dvc-KT-T24"/>
+                <constraint firstItem="Heg-zm-2KH" firstAttribute="trailing" secondItem="esH-UI-YXI" secondAttribute="trailing" id="Gsi-k8-ORc"/>
+                <constraint firstItem="CA7-CR-Pbx" firstAttribute="centerY" secondItem="esH-UI-YXI" secondAttribute="centerY" id="JsT-Pm-H4M"/>
+                <constraint firstItem="rGp-8t-gsM" firstAttribute="leading" secondItem="3aP-Gd-ESr" secondAttribute="leading" id="Lrx-ak-SXV"/>
+                <constraint firstItem="Heg-zm-2KH" firstAttribute="top" secondItem="esH-UI-YXI" secondAttribute="bottom" constant="10" id="Qkm-eg-CXt"/>
+                <constraint firstItem="3aP-Gd-ESr" firstAttribute="top" secondItem="Heg-zm-2KH" secondAttribute="bottom" constant="14" id="Wqm-H4-dhk"/>
+                <constraint firstItem="CA7-CR-Pbx" firstAttribute="leading" secondItem="esH-UI-YXI" secondAttribute="trailing" constant="23" id="XYj-pg-YMF"/>
+                <constraint firstItem="rGp-8t-gsM" firstAttribute="trailing" secondItem="3aP-Gd-ESr" secondAttribute="trailing" id="Yma-Ht-4Fm"/>
+                <constraint firstItem="CA7-CR-Pbx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="aeN-Xh-yBb"/>
+                <constraint firstItem="CA7-CR-Pbx" firstAttribute="bottom" secondItem="Heg-zm-2KH" secondAttribute="bottom" id="pVf-rT-u2H"/>
+                <constraint firstItem="rGp-8t-gsM" firstAttribute="trailing" secondItem="3aP-Gd-ESr" secondAttribute="trailing" id="pk0-SJ-01P"/>
+                <constraint firstItem="Heg-zm-2KH" firstAttribute="leading" secondItem="esH-UI-YXI" secondAttribute="leading" id="qGF-ku-PbH"/>
+                <constraint firstAttribute="trailing" secondItem="CA7-CR-Pbx" secondAttribute="trailing" constant="24" id="tKk-MN-izz"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

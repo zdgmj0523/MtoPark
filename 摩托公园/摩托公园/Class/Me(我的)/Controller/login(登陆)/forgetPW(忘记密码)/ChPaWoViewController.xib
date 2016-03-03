@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChPaWoViewController">
+            <connections>
+                <outlet property="passWord" destination="uS5-lv-msg" id="6xO-Ee-xzC"/>
+                <outlet property="sureNewPW" destination="vTZ-Ap-QBh" id="YAm-VJ-2mU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uS5-lv-msg">
+                    <rect key="frame" x="32" y="94" width="528" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" secureTextEntry="YES"/>
+                </textField>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSi-u2-XKa">
+                    <rect key="frame" x="32" y="132.5" width="528" height="0.5"/>
+                    <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="aE1-h8-WOw"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTZ-Ap-QBh">
+                    <rect key="frame" x="32" y="152" width="528" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" secureTextEntry="YES"/>
+                </textField>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRv-gE-WhF">
+                    <rect key="frame" x="32" y="190" width="528" height="0.5"/>
+                    <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="9wY-pa-sOE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uS5-lv-msg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="E02-tC-jai"/>
+                <constraint firstItem="vTZ-Ap-QBh" firstAttribute="top" secondItem="OSi-u2-XKa" secondAttribute="bottom" constant="10" id="JFl-66-a1D"/>
+                <constraint firstItem="cRv-gE-WhF" firstAttribute="top" secondItem="vTZ-Ap-QBh" secondAttribute="bottom" constant="10" id="KjZ-Y7-Iry"/>
+                <constraint firstItem="OSi-u2-XKa" firstAttribute="trailing" secondItem="uS5-lv-msg" secondAttribute="trailing" id="Mpb-gN-jO8"/>
+                <constraint firstItem="OSi-u2-XKa" firstAttribute="top" secondItem="uS5-lv-msg" secondAttribute="bottom" constant="10" id="OK4-Gh-J8P"/>
+                <constraint firstItem="OSi-u2-XKa" firstAttribute="leading" secondItem="uS5-lv-msg" secondAttribute="leading" id="S3i-nn-3LI"/>
+                <constraint firstItem="vTZ-Ap-QBh" firstAttribute="trailing" secondItem="uS5-lv-msg" secondAttribute="trailing" id="UMV-FK-cgZ"/>
+                <constraint firstItem="cRv-gE-WhF" firstAttribute="leading" secondItem="vTZ-Ap-QBh" secondAttribute="leading" id="aFS-r2-ku6"/>
+                <constraint firstItem="vTZ-Ap-QBh" firstAttribute="leading" secondItem="uS5-lv-msg" secondAttribute="leading" id="gnY-FS-VT3"/>
+                <constraint firstItem="uS5-lv-msg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="p0y-be-1fb"/>
+                <constraint firstAttribute="trailing" secondItem="uS5-lv-msg" secondAttribute="trailing" constant="24" id="pdg-xV-GLx"/>
+                <constraint firstItem="cRv-gE-WhF" firstAttribute="trailing" secondItem="vTZ-Ap-QBh" secondAttribute="trailing" id="szI-om-fmy"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

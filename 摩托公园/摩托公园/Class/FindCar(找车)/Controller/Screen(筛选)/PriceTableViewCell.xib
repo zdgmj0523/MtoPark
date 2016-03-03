@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceID" rowHeight="103" id="KGk-i7-Jjw" customClass="PriceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjn-dS-b3g" customClass="TTRangeSlider">
+                        <rect key="frame" x="20" y="48" width="300" height="60"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.95926036010000004" green="0.14687572130000001" blue="0.021226121880000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Vv5-Xe-6TH"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tym-YQ-0Wy">
+                        <rect key="frame" x="20" y="16" width="28" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wjn-dS-b3g" secondAttribute="trailing" constant="10" id="9JO-nB-ZdC"/>
+                    <constraint firstItem="Wjn-dS-b3g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="CrX-JK-i8v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="231.5" y="205.5"/>
+        </tableViewCell>
+    </objects>
+</document>
