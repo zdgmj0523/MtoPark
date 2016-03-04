@@ -40,8 +40,10 @@
     _num = !_num;
     if (_num != 0) {
         [button setTitle:@"收起选项" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     }else{
         [button setTitle:@"展开更多选项" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"Triangle 1"] forState:UIControlStateNormal];
     }
     _sectionNum = !_sectionNum;
     [_tableView reloadData];
@@ -56,6 +58,9 @@
     [_tableView addSubview:view];
     UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"展开更多选项" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Triangle 1"] forState:UIControlStateNormal];
+//    [button setTitleEdgeInsets:UIEdgeInsetsMake(0,0, 0,button.imageView.frame.origin.x)];
+//    [button setImageEdgeInsets:UIEdgeInsetsMake(0,button.titleLabel.bounds.origin.x+button.titleLabel.frame.size.width,0,0)];
     [button setTintColor:[UIColor redColor]];
     button.frame = CGRectMake(AUTOSIZE(290), 0, AUTOSIZE(80), AUTOSIZE(14));
     button.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:10];

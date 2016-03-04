@@ -13,6 +13,7 @@
 #import "ScoreViewController.h"
 #import "PublishmentViewController.h"
 #import "InformViewController.h"
+#import "FriViewController.h"
 
 @interface MeController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UIView * userView;
@@ -46,15 +47,15 @@
     
 }
 -(void)createRightButtonItem{
-//    UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [leftButton setImage:[UIImage imageNamed:@"2.back_arrow"] forState:UIControlStateNormal];
-//    leftButton.frame = CGRectMake(12, 0, 20, 21);
-//    [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(rightBarButtonItemClick)];
+    UIButton * rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setImage:[UIImage imageNamed:@"icon_setup_small copy"] forState:UIControlStateNormal];
+    rightButton.frame = CGRectMake(12, 0, 20, 21);
+    [rightButton addTarget:self action:@selector(rightBarButtonItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
+//    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(rightBarButtonItemClick)];
     self.navigationItem.rightBarButtonItem = item;
 }
--(void)rightBarButtonItemClick{
+-(void)rightBarButtonItemClick:(UIButton *)button{
     SetUpViewController * setUp = [[SetUpViewController alloc]init];
     [self.navigationController pushViewController:setUp animated:NO];
 }
@@ -114,6 +115,7 @@
         UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         button.frame = CGRectMake(44+((self.view.bounds.size.width - 88)/3+19.5)*i, 192, 28, 20);
         [button setTintColor:[UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1]];
+        button.tag = 150 + i;
         [button setTitle:array[i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(infoButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:14];
@@ -134,12 +136,18 @@
     [self.navigationController pushViewController:iPhoneView animated:YES];
 }
 -(void)infoButtonClick:(UIButton *)button{
-    if ([button.titleLabel.text isEqualToString:@"关注"]) {
-        NSLog(@"%@",button.titleLabel.text);
-    }else if ([button.titleLabel.text isEqualToString:@"粉丝"]){
-        NSLog(@"%@",button.titleLabel.text);
+    if (button.tag ==150 ) {
+        FriViewController * fri = [[FriViewController alloc]init];
+        fri.viewTitle = @"关注";
+        [self.navigationController pushViewController:fri animated:YES];
+    }else if (button.tag == 151){
+        FriViewController * fri = [[FriViewController alloc]init];
+        fri.viewTitle = @"粉丝";
+        [self.navigationController pushViewController:fri animated:YES];
     }else{
-        NSLog(@"%@",button.titleLabel.text);
+        FriViewController * fri = [[FriViewController alloc]init];
+        fri.viewTitle = @"好友";
+        [self.navigationController pushViewController:fri animated:YES];
     }
 }
 //-(void)buttonClick:(UIButton *)button{

@@ -27,6 +27,9 @@
 		0954CD9E1C86D5BE001F3C83 /* ChPaWoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CD9C1C86D5BE001F3C83 /* ChPaWoViewController.xib */; };
 		0954CDA21C88468F001F3C83 /* BrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA01C88468F001F3C83 /* BrandTableViewCell.m */; };
 		0954CDA31C88468F001F3C83 /* BrandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CDA11C88468F001F3C83 /* BrandTableViewCell.xib */; };
+		0954CDA61C885435001F3C83 /* FriViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA51C885435001F3C83 /* FriViewController.m */; };
+		0954CDAA1C885545001F3C83 /* FriTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA81C885545001F3C83 /* FriTableViewCell.m */; };
+		0954CDAB1C885545001F3C83 /* FriTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CDA91C885545001F3C83 /* FriTableViewCell.xib */; };
 		0954E2BB1C8072AB0017600C /* TTRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954E2B91C8072AB0017600C /* TTRangeSlider.m */; };
 		0961B3371C61B16500739A6D /* SetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961B3361C61B16500739A6D /* SetUpViewController.m */; };
 		0961B33B1C61B1D100739A6D /* PrivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961B33A1C61B1D100739A6D /* PrivateViewController.m */; };
@@ -124,6 +127,11 @@
 		0954CD9F1C88468F001F3C83 /* BrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTableViewCell.h; sourceTree = "<group>"; };
 		0954CDA01C88468F001F3C83 /* BrandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTableViewCell.m; sourceTree = "<group>"; };
 		0954CDA11C88468F001F3C83 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
+		0954CDA41C885435001F3C83 /* FriViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriViewController.h; sourceTree = "<group>"; };
+		0954CDA51C885435001F3C83 /* FriViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriViewController.m; sourceTree = "<group>"; };
+		0954CDA71C885545001F3C83 /* FriTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriTableViewCell.h; sourceTree = "<group>"; };
+		0954CDA81C885545001F3C83 /* FriTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriTableViewCell.m; sourceTree = "<group>"; };
+		0954CDA91C885545001F3C83 /* FriTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriTableViewCell.xib; sourceTree = "<group>"; };
 		0954E2B81C8072AB0017600C /* TTRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSlider.h; sourceTree = "<group>"; };
 		0954E2B91C8072AB0017600C /* TTRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRangeSlider.m; sourceTree = "<group>"; };
 		0954E2BA1C8072AB0017600C /* TTRangeSliderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSliderDelegate.h; sourceTree = "<group>"; };
@@ -415,6 +423,8 @@
 				0951C8F61C5717830006E552 /* MeController.m */,
 				09EFA52E1C816B5900611A50 /* login(登陆) */,
 				0961B3341C61B16500739A6D /* setUp(设置) */,
+				0954CDA41C885435001F3C83 /* FriViewController.h */,
+				0954CDA51C885435001F3C83 /* FriViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -430,6 +440,9 @@
 			isa = PBXGroup;
 			children = (
 				09AB1B451C7ED76300B2DE43 /* inform(通知) */,
+				0954CDA71C885545001F3C83 /* FriTableViewCell.h */,
+				0954CDA81C885545001F3C83 /* FriTableViewCell.m */,
+				0954CDA91C885545001F3C83 /* FriTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -941,6 +954,7 @@
 				09EAD11F1C5A20340051D3A5 /* AllCarTableViewCell.xib in Resources */,
 				09AB1B4A1C7ED77D00B2DE43 /* InformTableViewCell.xib in Resources */,
 				0954CD941C86C83A001F3C83 /* ForgetPWViewController.xib in Resources */,
+				0954CDAB1C885545001F3C83 /* FriTableViewCell.xib in Resources */,
 				0951C8A51C5713F40006E552 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1016,6 +1030,7 @@
 			files = (
 				09E50BD31C6320E4008FE794 /* ChangePWViewController.m in Sources */,
 				0951C9301C575E8F0006E552 /* BrandViewController.m in Sources */,
+				0954CDAA1C885545001F3C83 /* FriTableViewCell.m in Sources */,
 				0951C8EE1C5716B00006E552 /* TabBarController.m in Sources */,
 				09E1B1DE1C6B2933002CA7F7 /* InformationViewController.m in Sources */,
 				0954CD931C86C83A001F3C83 /* ForgetPWViewController.m in Sources */,
@@ -1036,6 +1051,7 @@
 				09EAD1181C59D4730051D3A5 /* BaseAIViewController.m in Sources */,
 				09E823D11C6448C300527F45 /* AboutViewController.m in Sources */,
 				09AB1BB81C7F260300B2DE43 /* BaseInfoTableViewCell.m in Sources */,
+				0954CDA61C885435001F3C83 /* FriViewController.m in Sources */,
 				0951C9391C575EFF0006E552 /* ScreenViewController.m in Sources */,
 				0954CD9D1C86D5BE001F3C83 /* ChPaWoViewController.m in Sources */,
 				09EFA57B1C81ED4600611A50 /* PriceTableViewCell.m in Sources */,

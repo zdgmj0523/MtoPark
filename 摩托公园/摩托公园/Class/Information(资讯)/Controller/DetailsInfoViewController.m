@@ -31,6 +31,7 @@
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 -(void)leftButtonClick:(UIButton *)button{
     [self.navigationController popViewControllerAnimated:YES];
@@ -45,7 +46,7 @@
 }
 //收藏按钮
 -(void)rightButtonClick:(UIButton *)button{
-    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"收藏");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

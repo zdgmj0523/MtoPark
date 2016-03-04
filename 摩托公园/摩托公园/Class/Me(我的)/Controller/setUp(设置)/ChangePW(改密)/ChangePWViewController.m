@@ -19,18 +19,19 @@
     [super viewDidLoad];
     self.title = @"修改密码";
     self.view.backgroundColor = [UIColor whiteColor];
-    [self createLeftButtonItem];
+    [self createButtonItem];
     
     [self createViewController];
     // Do any additional setup after loading the view from its nib.
 }
--(void)createLeftButtonItem{
+-(void)createButtonItem{
     UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftButton setImage:[UIImage imageNamed:@"2.back_arrow"] forState:UIControlStateNormal];
     leftButton.frame = CGRectMake(12, 0, 20, 21);
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
     
     UIButton * rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightButton setTitle:@"确定" forState:UIControlStateNormal];

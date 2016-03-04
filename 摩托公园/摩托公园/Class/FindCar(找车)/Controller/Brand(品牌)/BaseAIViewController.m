@@ -14,6 +14,7 @@
 @interface BaseAIViewController ()<returnAllCarIDDelgate>
 @property(nonatomic,strong)AllCarController * allContro;
 @property(nonatomic,strong)InformationViewController * inforContro;
+@property(nonatomic,strong)UIButton * tempButton;
 @end
 
 @implementation BaseAIViewController
@@ -51,17 +52,20 @@
 -(void)createChooseButtonItem{
     NSArray * titleArr = @[@"全部车款",@"品牌详情"];
     for (int i = 0; i< 2; i ++) {
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(72+(60+(self.view.bounds.size.width-(132*2)))*i, 75, 56, 20);
         [button setTitle:titleArr[i] forState:UIControlStateNormal];
-        button.tag = 200 + i;
+        button.tag = 220 + i;
         button.titleLabel.font = [UIFont systemFontOfSize:14];
-        [button setTintColor:[UIColor colorWithRed:158/255.0 green:158/255.0 blue:158/255.0 alpha:1]];
+        [button setTitleColor:[UIColor colorWithRed:158/255.0 green:158/255.0 blue:158/255.0 alpha:1] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:211/255.0 green:47/255.0 blue:47/255.0 alpha:1] forState:UIControlStateSelected];
+        
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
-    UIButton * button = (UIButton *)[self.view viewWithTag:200];
-    [button setTintColor:[UIColor colorWithRed:211/255.0 green:47/255.0 blue:47/255.0 alpha:1]];
+    
+    UIButton * button = (UIButton *)[self.view viewWithTag:220];
+    [button setTitleColor:[UIColor colorWithRed:211/255.0 green:47/255.0 blue:47/255.0 alpha:1] forState:UIControlStateNormal];
 
     //创建线条
     UIView * view = [[UIView alloc]initWithFrame:CGRectMake(70, 104, 60, 2)];
@@ -76,6 +80,7 @@
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 -(void)leftButtonClick:(UIButton *)button{
     [self.navigationController popViewControllerAnimated:YES];
@@ -114,6 +119,17 @@
 }
 #pragma mark 按钮的点击事件
 -(void)buttonClick:(UIButton*)button{
+    UIButton * button1 = (UIButton *)[self.view viewWithTag:220];
+    [button1 setTitleColor:[UIColor colorWithRed:158/255.0 green:158/255.0 blue:158/255.0 alpha:1] forState:UIControlStateNormal];
+    if (_tempButton == nil) {
+        button.selected = YES;
+        _tempButton = button;
+    }else if (_tempButton != button && _tempButton != nil){
+        _tempButton.selected = NO;
+        button.selected = YES;
+        _tempButton = button;
+    }
+    
     UIView * LineView = (UIView*)[self.view viewWithTag:250];
     // 1.创建动画对象
     CABasicAnimation *anim = [CABasicAnimation animation];
@@ -125,7 +141,7 @@
     anim.fillMode = kCAFillModeForwards;
     
 
-    if (button.tag == 200) {
+    if (button.tag == 220) {
         //添加动画
         [LineView.layer addAnimation:anim forKey:nil];
         NSLog(@"左边");

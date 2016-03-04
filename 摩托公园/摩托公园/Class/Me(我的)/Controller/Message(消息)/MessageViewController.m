@@ -36,8 +36,8 @@
 //    imageView.image = [UIImage imageNamed:@"icon_app_logo"];
 //    [self.view addSubview:imageView];
     if (_dataArray.count == 0) {
-        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake((WIDTH-80)/2, 148+64, 80, 65)];
-        imageView.image = [UIImage imageNamed:@"icon_app_logo"];
+        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake((WIDTH-AUTOSIZE(80))/2, 148+64, AUTOSIZE(80), AUTOSIZE(65))];
+        imageView.image = [UIImage imageNamed:@"icon_wechat_big"];
         [self.view addSubview:imageView];
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake((WIDTH-126)/2, imageView.frame.origin.y+imageView.bounds.size.height+24, 126, 20)];
         label.text = @"你还没有收到过消息";
@@ -64,6 +64,7 @@
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 -(void)leftButtonClick:(UIButton *)button{
     [self.navigationController popViewControllerAnimated:YES];

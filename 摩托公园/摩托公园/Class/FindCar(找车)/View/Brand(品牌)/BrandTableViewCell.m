@@ -11,6 +11,7 @@
 @implementation BrandTableViewCell
 
 - (void)awakeFromNib {
+    _imView.contentMode =  UIViewContentModeCenter;
     // Initialization code
 }
 

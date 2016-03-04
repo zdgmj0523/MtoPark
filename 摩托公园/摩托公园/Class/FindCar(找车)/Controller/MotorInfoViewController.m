@@ -53,6 +53,7 @@
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 //左侧导航栏按钮点击事件
 -(void)leftButtonClick:(UIButton *)button{
