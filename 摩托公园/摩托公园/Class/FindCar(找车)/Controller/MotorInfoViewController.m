@@ -11,6 +11,8 @@
 
 @interface MotorInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NSMutableArray * dataArray;
+
 @property(nonatomic,assign)NSInteger num;
 
 @property (nonatomic,assign)NSInteger kWidth;
@@ -33,6 +35,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"阿里普雅";
+    
+    _dataArray = [NSMutableArray array];
+    
     //创建导航栏
     [self createLeftButtonItem];
     [self createRightButtonItem];

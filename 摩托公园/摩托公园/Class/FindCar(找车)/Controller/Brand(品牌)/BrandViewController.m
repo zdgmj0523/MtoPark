@@ -9,10 +9,14 @@
 #import "BrandViewController.h"
 #import "BaseAIViewController.h"
 #import "BrandTableViewCell.h"
+#import "BrandModel.h"
+
 
 @interface BrandViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArray;
+//sectionTitle数组
+@property(nonatomic,strong)NSMutableArray * secTitArray;
 @end
 
 @implementation BrandViewController
@@ -20,26 +24,84 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     
+
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _dataArray = [NSMutableArray array];
-    [self creatTableView];
+    _secTitArray = [NSMutableArray array];
     [self loadData];
-    
+    [self creatTableView];
     // Do any additional setup after loading the view.
 }
 
 -(void)loadData{
-    //创建数据源
-    for (int i = 'A'; i <= 'Z'; i++) {
-        NSMutableArray * arr = [NSMutableArray array];
-        for (int j = 0; j < 10; j++) {
-            [arr addObject:[NSString stringWithFormat:@"%c%d",i,j]];
+//    创建数据源
+//    for (int i = 'A'; i <= 'Z'; i++) {
+//        NSMutableArray * arr = [NSMutableArray array];
+//        [arr addObject:[NSString stringWithFormat:@"%c",i]];
+//        
+//        [self.dataArray addObject:arr];
+//    }
+    NSString *URL = @"http://moto-test.piaggioclub.cn/Home/Api/get_brand_list";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:URL parameters:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"成功");
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary * dataDict = dict[@"data"];
+        NSDictionary * brand_listDict = dataDict[@"brand_list"];
+        NSMutableArray * array = [NSMutableArray new];
+        for (NSString * str in [brand_listDict allKeys]) {
+            [array addObject:str];
         }
-        [self.dataArray addObject:arr];
-    }
+//        对数组进行排序
+        NSArray *sortedArray = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            if ([obj1 intValue] > [obj2 intValue]){
+                return NSOrderedDescending;
+            }
+            if ([obj1 intValue] < [obj2 intValue]){
+                return NSOrderedAscending;
+            }
+            return NSOrderedSame;
+        }];
+//        NSLog(@"排序后:%@",sortedArray);
+        for (int i = 0; i < brand_listDict.count; i ++) {
+            
+            NSString * str = [brand_listDict valueForKey:
+                              [NSString stringWithFormat:@"%@",sortedArray[i]]][@"initial"];
+            [_secTitArray addObject:str];
+            
+        }
+//        NSLog(@"%@",_secTitArray);
+        //获取车型数据
+        
+        for (NSDictionary * NumDict in [brand_listDict allValues]) {
+            NSMutableArray * numArray = [NSMutableArray array];
+//            NSLog(@"brand_listDict%ld",[brand_listDict allValues].count);
+//            NSLog(@"%@",NumDict);
+            NSArray * array = NumDict[@"brand"];
+//            NSLog(@"array数组个数%d,%ld",a,array.count);
+            
+            for (NSDictionary * dict in array) {
+                BrandModel * model = [[BrandModel alloc]init];
+                [model setValuesForKeysWithDictionary:dict];
+                [numArray addObject:model];
+            }
+            [_dataArray addObject:numArray];
+//            NSLog(@"dataArray%ld",_dataArray.count);
+        }
+//        NSLog(@"%ld",[_dataArray[1] count]);
+        //刷新列表
+        [_tableView reloadData];
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"错误Error: %@", error);
+    }];
+    
+    
     
 }
 
@@ -58,24 +120,25 @@
 
 #pragma mark cell的代理方法
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArray.count;
+    return _secTitArray.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    NSLog(@"%ld",self.dataArray.count);
     return [self.dataArray[section] count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     BrandTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"BrandId"];
-    if (indexPath.row == 0 || indexPath.row == [self.dataArray[indexPath.section] count]-1) {
-        cell.titleLabel.frame = CGRectMake(89, 30, 100, 20);
-    }
-    if (indexPath.row == 0 || indexPath.row == [self.dataArray[indexPath.section] count]-1) {
-        cell.imView.frame = CGRectMake(20, 12, 64, 32);
-        
-    }
-    cell.imView.image = [UIImage imageNamed:@"2.models_list copy"];
-//    cell.imView.contentMode =  UIViewContentModeCenter;
-//    [cell.imView setContentScaleFactor:2];
+//    if (indexPath.row == 0 || indexPath.row == [self.dataArray[indexPath.section] count]-1) {
+//        cell.titleLabel.frame = CGRectMake(89, 30, 100, 20);
+//    }
+//    if (indexPath.row == 0 || indexPath.row == [self.dataArray[indexPath.section] count]-1) {
+//        cell.imView.frame = CGRectMake(20, 12, 64, 32);
+//        
+//    }
+    BrandModel * model = _dataArray[indexPath.section][indexPath.row];
+//    NSLog(@"%@",model);
+    [cell loadbrandDataFromModel:model];
     
     //cell.labelText.text = _dataArray[indexPath.section] [indexPath.row] ;
     return cell;
@@ -83,7 +146,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     BaseAIViewController * base = [[BaseAIViewController alloc]init];
-    base.nameStr = _dataArray[indexPath.section] [indexPath.row];
+//    base.nameStr = _dataArray[indexPath.section] [indexPath.row];
 //    [self presentViewController:base animated:YES completion:nil];
     [self.navigationController pushViewController:base animated:YES];
     
@@ -154,15 +217,15 @@
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
     _tableView.sectionIndexColor = [UIColor redColor];
     NSMutableArray * arr = [NSMutableArray arrayWithCapacity:0];
-    for (int i = 'A'; i <= 'Z'; i ++) {
-        [arr addObject:[NSString stringWithFormat:@"%c",i]];
+    for (NSString * str in _secTitArray) {
+        [arr addObject:str];
     }
     return arr;
 }
 #pragma mark 修改sectionHeard文字
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     //第A段到第Z段
-    return [NSString stringWithFormat:@"%c",'A'+section];
+    return _secTitArray[section];
 }
 #pragma mark 自定义sectionHeardView
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

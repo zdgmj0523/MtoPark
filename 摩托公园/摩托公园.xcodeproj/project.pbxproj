@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094B75711C8A925400BF6477 /* BrandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 094B75701C8A925400BF6477 /* BrandModel.m */; };
+		094B75751C8AF28300BF6477 /* BrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 094B75731C8AF28300BF6477 /* BrandTableViewCell.m */; };
+		094B75761C8AF28300BF6477 /* BrandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094B75741C8AF28300BF6477 /* BrandTableViewCell.xib */; };
 		0951C8A51C5713F40006E552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C8A41C5713F40006E552 /* Assets.xcassets */; };
 		0951C8A81C5713F40006E552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0951C8A61C5713F40006E552 /* LaunchScreen.storyboard */; };
 		0951C8B31C5713F40006E552 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951C8B21C5713F40006E552 /* ____Tests.m */; };
@@ -25,8 +28,6 @@
 		0954CD941C86C83A001F3C83 /* ForgetPWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CD921C86C83A001F3C83 /* ForgetPWViewController.xib */; };
 		0954CD9D1C86D5BE001F3C83 /* ChPaWoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CD9B1C86D5BE001F3C83 /* ChPaWoViewController.m */; };
 		0954CD9E1C86D5BE001F3C83 /* ChPaWoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CD9C1C86D5BE001F3C83 /* ChPaWoViewController.xib */; };
-		0954CDA21C88468F001F3C83 /* BrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA01C88468F001F3C83 /* BrandTableViewCell.m */; };
-		0954CDA31C88468F001F3C83 /* BrandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CDA11C88468F001F3C83 /* BrandTableViewCell.xib */; };
 		0954CDA61C885435001F3C83 /* FriViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA51C885435001F3C83 /* FriViewController.m */; };
 		0954CDAA1C885545001F3C83 /* FriTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954CDA81C885545001F3C83 /* FriTableViewCell.m */; };
 		0954CDAB1C885545001F3C83 /* FriTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954CDA91C885545001F3C83 /* FriTableViewCell.xib */; };
@@ -89,6 +90,11 @@
 
 /* Begin PBXFileReference section */
 		03FEC624EB6F761BC789D17B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		094B756F1C8A925400BF6477 /* BrandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandModel.h; sourceTree = "<group>"; };
+		094B75701C8A925400BF6477 /* BrandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandModel.m; sourceTree = "<group>"; };
+		094B75721C8AF28300BF6477 /* BrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTableViewCell.h; sourceTree = "<group>"; };
+		094B75731C8AF28300BF6477 /* BrandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTableViewCell.m; sourceTree = "<group>"; };
+		094B75741C8AF28300BF6477 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
 		0951C8951C5713F40006E552 /* 摩托公园.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "摩托公园.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0951C8A41C5713F40006E552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0951C8A71C5713F40006E552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,9 +130,6 @@
 		0954CD9A1C86D5BE001F3C83 /* ChPaWoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChPaWoViewController.h; sourceTree = "<group>"; };
 		0954CD9B1C86D5BE001F3C83 /* ChPaWoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChPaWoViewController.m; sourceTree = "<group>"; };
 		0954CD9C1C86D5BE001F3C83 /* ChPaWoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChPaWoViewController.xib; sourceTree = "<group>"; };
-		0954CD9F1C88468F001F3C83 /* BrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTableViewCell.h; sourceTree = "<group>"; };
-		0954CDA01C88468F001F3C83 /* BrandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTableViewCell.m; sourceTree = "<group>"; };
-		0954CDA11C88468F001F3C83 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
 		0954CDA41C885435001F3C83 /* FriViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriViewController.h; sourceTree = "<group>"; };
 		0954CDA51C885435001F3C83 /* FriViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriViewController.m; sourceTree = "<group>"; };
 		0954CDA71C885545001F3C83 /* FriTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriTableViewCell.h; sourceTree = "<group>"; };
@@ -232,6 +235,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094B756D1C8A921200BF6477 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				094B756E1C8A924100BF6477 /* BrandModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		094B756E1C8A924100BF6477 /* BrandModel */ = {
+			isa = PBXGroup;
+			children = (
+				094B756F1C8A925400BF6477 /* BrandModel.h */,
+				094B75701C8A925400BF6477 /* BrandModel.m */,
+			);
+			path = BrandModel;
+			sourceTree = "<group>";
+		};
 		0951C88C1C5713F40006E552 = {
 			isa = PBXGroup;
 			children = (
@@ -308,8 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				0951C8D71C5716410006E552 /* Controller */,
-				0951C8D81C5716410006E552 /* Model */,
 				0951C8D91C5716410006E552 /* View */,
+				094B756D1C8A921200BF6477 /* Model */,
 			);
 			path = "FindCar(找车)";
 			sourceTree = "<group>";
@@ -327,13 +347,6 @@
 				0951C9211C575E150006E552 /* Ranking(排行) */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		0951C8D81C5716410006E552 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0951C8D91C5716410006E552 /* View */ = {
@@ -538,9 +551,9 @@
 			children = (
 				09EAD1191C5A20150051D3A5 /* AllCar(全部车款) */,
 				09EAD11A1C5A20150051D3A5 /* Information(详情) */,
-				0954CD9F1C88468F001F3C83 /* BrandTableViewCell.h */,
-				0954CDA01C88468F001F3C83 /* BrandTableViewCell.m */,
-				0954CDA11C88468F001F3C83 /* BrandTableViewCell.xib */,
+				094B75721C8AF28300BF6477 /* BrandTableViewCell.h */,
+				094B75731C8AF28300BF6477 /* BrandTableViewCell.m */,
+				094B75741C8AF28300BF6477 /* BrandTableViewCell.xib */,
 			);
 			path = "Brand(品牌)";
 			sourceTree = "<group>";
@@ -948,9 +961,9 @@
 				0954CD9E1C86D5BE001F3C83 /* ChPaWoViewController.xib in Resources */,
 				09EFA5381C816BC000611A50 /* IPhoneLoginViewController.xib in Resources */,
 				09EFA5821C821F1600611A50 /* IDLoginViewController.xib in Resources */,
-				0954CDA31C88468F001F3C83 /* BrandTableViewCell.xib in Resources */,
 				09AB1BB91C7F260300B2DE43 /* BaseInfoTableViewCell.xib in Resources */,
 				09AB1B9B1C7F0D3A00B2DE43 /* RankingTableViewCell.xib in Resources */,
+				094B75761C8AF28300BF6477 /* BrandTableViewCell.xib in Resources */,
 				09EAD11F1C5A20340051D3A5 /* AllCarTableViewCell.xib in Resources */,
 				09AB1B4A1C7ED77D00B2DE43 /* InformTableViewCell.xib in Resources */,
 				0954CD941C86C83A001F3C83 /* ForgetPWViewController.xib in Resources */,
@@ -1053,6 +1066,7 @@
 				09AB1BB81C7F260300B2DE43 /* BaseInfoTableViewCell.m in Sources */,
 				0954CDA61C885435001F3C83 /* FriViewController.m in Sources */,
 				0951C9391C575EFF0006E552 /* ScreenViewController.m in Sources */,
+				094B75711C8A925400BF6477 /* BrandModel.m in Sources */,
 				0954CD9D1C86D5BE001F3C83 /* ChPaWoViewController.m in Sources */,
 				09EFA57B1C81ED4600611A50 /* PriceTableViewCell.m in Sources */,
 				09EB506A1C58BFD600710023 /* SCPopView.m in Sources */,
@@ -1064,7 +1078,6 @@
 				09AB1BAE1C7F226D00B2DE43 /* BaseInfoViewController.m in Sources */,
 				0951C8F71C5717830006E552 /* MeController.m in Sources */,
 				0951C8F41C5717720006E552 /* InformationController.m in Sources */,
-				0954CDA21C88468F001F3C83 /* BrandTableViewCell.m in Sources */,
 				09EB50551C5875E900710023 /* AllCarController.m in Sources */,
 				09AB1BAB1C7F201F00B2DE43 /* KnowledgeViewController.m in Sources */,
 				0981F08F1C72C13A00F5EEF7 /* ContactViewController.m in Sources */,
@@ -1073,6 +1086,7 @@
 				0951C8E81C5716410006E552 /* main.m in Sources */,
 				0951C9331C575EC30006E552 /* CollectViewController.m in Sources */,
 				0951C8E71C5716410006E552 /* AppDelegate.m in Sources */,
+				094B75751C8AF28300BF6477 /* BrandTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,11 +1219,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "/Users/xiaodu/Desktop/MotorPark/摩托公园/摩托公园/Class/Other(其他)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/摩托公园/Class/Other(其他)/PrefixHeader.pch";
 				INFOPLIST_FILE = "摩托公园/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				PRODUCT_BUNDLE_IDENTIFIER = "chch.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -1219,11 +1235,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREFIX_HEADER = "/Users/xiaodu/Desktop/MotorPark/摩托公园/摩托公园/Class/Other(其他)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/摩托公园/Class/Other(其他)/PrefixHeader.pch";
 				INFOPLIST_FILE = "摩托公园/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				PRODUCT_BUNDLE_IDENTIFIER = "chch.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
