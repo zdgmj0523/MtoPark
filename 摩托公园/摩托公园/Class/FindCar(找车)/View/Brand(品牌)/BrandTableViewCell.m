@@ -18,7 +18,7 @@
 - (void)awakeFromNib {
 //        self.imagView.contentMode =  UIViewContentModeScaleAspectFit;
 //        self.imagView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-//        self.imagView.clipsToBounds  = YES;
+//        self.'imagView.clipsToBounds  = YES;
     // Initialization code
 }
 
